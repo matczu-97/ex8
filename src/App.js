@@ -1,25 +1,29 @@
 import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ const images = Array.from({length: 10}, (_, index) => ({src: `https://picsum.photos/200/300?random=${index + 1}`, big: false}));
+
+const [ChosenImage, setImage] = useState(images[0].src);
+
+return (
+  <div className='ImagesContainer'>
+    <div className='ImagesCollection'>
+      {images.map((data, index) => (
+        <img
+          key={index}
+          className={ChosenImage === data.src ? 'ImageCollection selected' : 'ImageCollection'}
+          src={data.src}
+          onClick={() => {setImage(data.src)}}
+        />
+      ))}
     </div>
-  );
+    <div>
+      <img src={ChosenImage} className='ChosenImage' />
+    </div>
+  </div>
+);
 }
 
 export default App;

@@ -28,6 +28,8 @@
   color: #61dafb;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +37,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.ImageCollection {
+  margin: 5px; /* small margin */
+  padding: 5px; /* small padding */
+  width: 100px;
+  height: 100px; /* small size */
+
+}
+
+/* ChosenImage class */
+.ChosenImage {
+  width: 500px;
+  height: 500px; /* bigger size */
+}
+
+.ImagesContainer
+{
+  text-align: center;
+}
+
+.selected {
+  border: 2px solid red; /* Add red border for selected image */
 }
