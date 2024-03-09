@@ -10,9 +10,8 @@ const [ChosenImage, setImage] = useState(images[0].src);
 return (
   <div className='ImagesContainer'>
     <div className='ImagesCollection'>
-      {images.map((data, index) => (
+      {images.map((data) => (
         <img
-          key={index}
           className={ChosenImage === data.src ? 'ImageCollection selected' : 'ImageCollection'}
           src={data.src}
           onClick={() => {setImage(data.src)}}
